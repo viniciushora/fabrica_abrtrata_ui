@@ -8,6 +8,11 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import fabrica.abstrata.botoes.ButtonOK;
+import fabrica.abstrata.botoes.ButtonCancel;
+import fabrica.abstrata.botoes.FabricaAbstrataBotoes;
+import fabrica.abstrata.botoes.FabricaBotoesIcones;
+import fabrica.abstrata.botoes.FabricaPadrao;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -40,17 +45,20 @@ public class EditorTexto extends javax.swing.JFrame {
 
     
     private void addButtons(String tema){
+        FabricaAbstrataBotoes fabrica = null;
         
         if(tema.equalsIgnoreCase("tema1")){
+            fabrica = new FabricaPadrao();
         }else if(tema.equalsIgnoreCase("tema2")){
+            fabrica = new FabricaBotoesIcones();
         }                
-                
-        cancel = new JButton();
-        ok = new JButton();
-        ok.setText("OK");
+        
+        ok = fabrica.criaBotaoOK();
+        cancel = fabrica.criaBotaoCancel();
+        
+        ok.setText("Ok");
         cancel.setText("Cancel");
         
-                
         jLabel1 = new javax.swing.JLabel();
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
