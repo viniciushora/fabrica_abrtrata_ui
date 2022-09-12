@@ -43,7 +43,6 @@ public class EditorTexto extends javax.swing.JFrame {
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
     }
 
-    
     private void addButtons(String tema){
         FabricaAbstrataBotoes fabrica = null;
         

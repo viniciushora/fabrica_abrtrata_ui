@@ -4,7 +4,6 @@
  */
 package fabrica.abstrata.botoes;
 
-import javax.swing.JButton;
 import fabrica.abstrata.botoes.ButtonOK;
 import fabrica.abstrata.botoes.ButtonCancel;
 
@@ -15,11 +14,11 @@ import fabrica.abstrata.botoes.ButtonCancel;
 public class FabricaBotoesIcones extends FabricaAbstrataBotoes {
     
     @Override
-    public JButton criaBotaoOK() {
+    public ButtonOK criaBotaoOK() {
         return new ButtonOK();
     }
     @Override
-    public JButton criaBotaoCancel() {
+    public ButtonCancel criaBotaoCancel() {
         return new ButtonCancel();
     }
 }
